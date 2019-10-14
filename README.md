@@ -28,7 +28,9 @@ Run terraform apply, you should end with a new repo created, and state locally.
 The goal of this lab is move the random_pet into a separate project.
 
 Hints:
+
 [move state](https://www.terraform.io/docs/commands/state/mv.html)
+
 [modules](https://www.terraform.io/docs/configuration/modules.html)
 
 
@@ -42,3 +44,18 @@ Hints:
 - Terraform apply should say the nothing to be created, state should persists.
 - Terraform destroy should work and delete the existing state
 
+# Run log
+
+- `terraform apply`
+ ```
+ random_pet.name: Creating...
+ random_pet.name: Creation complete after 0s [id=widely-horribly-equipped-mako]
+ null_resource.hello: Creating...
+ null_resource.hello: Provisioning with 'local-exec'...
+ null_resource.hello (local-exec): Executing: ["/bin/sh" "-c" "echo Hello widely-horribly-equipped-mako"]
+ null_resource.hello (local-exec): Hello widely-horribly-equipped-mako
+ null_resource.hello: Creation complete after 0s [id=39383931994062867]
+
+ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+ ```
+- 
